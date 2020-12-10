@@ -49,6 +49,7 @@ body {
   font-size: 200%;
   background-color: rgb(221, 221, 221);
 }
+
 #icons > div {
   flex-basis: calc(100% / 6 - 20px );
   min-width: 150px;
@@ -59,6 +60,7 @@ body {
   text-align: center;
   filter: drop-shadow(1px 1px 1px rgba(0,0,0, 0.5));
 }
+
 .icons .title {
   font-size: 14px;
 }

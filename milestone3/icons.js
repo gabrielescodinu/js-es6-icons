@@ -28,16 +28,13 @@ $(document).ready(function () {
    {
      name: "flower",
      family: "plant",
-     icon: "fas fa-tractor",
-     color: "orange",
+     icon: "fas fa-seedling",
+     color: "purple",
    },
  ];
 
   // colori come da milestone 2
-
-
   //aggiungiamo dei colori come da milestone 2
-
   //inseriamo le icone nel container come da milefunctstone 2
   const icons = document.getElementById('icons');
 
@@ -52,24 +49,25 @@ $(document).ready(function () {
   });
 
   //estrapoliamo i tipi di icone
-  let listaAnimali = [];
-  let listaVeicoli = [];
 
-  lista.forEach(listaElemento => {
-    if (listaElemento.family === "animal") {
-      listaAnimali.push(listaElemento)
-    } else if (listaElemento.family === "vehicle") {
-      listaVeicoli.push(listaElemento)
-    }
-  })
-  console.log(listaAnimali);
-  console.log(listaVeicoli);
 
   //aggiungiamo i tipi alla select
+  // const iconsAnimal = document.getElementById('iconsAnimal');
+  //
+  // listaAnimali.forEach(listaAnimaliElemento => {
+  //   const markup = `
+  //   <div>
+  //   <i class="${listaAnimaliElemento.icon}" style="color:${listaAnimaliElemento.color}"></i>
+  //   ${listaAnimaliElemento.name}
+  //   </div>
+  //   `;
+  //   iconsAnimal.insertAdjacentHTML('beforeend', markup);
+  // });
+
   var opzioneAnimali = $(".animali");
 
-  opzioneAnimali.click(function(){
-    
+  opzioneAnimali.change (function(){
+
   })
 
 

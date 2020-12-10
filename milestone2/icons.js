@@ -28,7 +28,7 @@ $(document).ready(function () {
     {
       name: "flower",
       family: "plant",
-      icon: "fas fa-tractor",
+      icon: "fas fa-seedling",
       color: "red",
     },
   ];
@@ -41,18 +41,18 @@ $(document).ready(function () {
   const purple = "purple";
 
   const nuovaLista = lista.map(listaElemento => {
-    const name = listaElemento.name;
-    const family = listaElemento.family;
-    const icon = listaElemento.icon;
-    const color = listaElemento.color;
+    let color;
 
-    // if (listaElemento.family === "animal") {
-    //   return "blue";
-    // }
+    if (listaElemento.family === "animal") {
+      color = blue;
+    } else if (listaElemento.family === "vehicle") {
+      color = orange;
+    } else {
+      color = purple
+    }
     return {
       ...listaElemento,
-      color :
-        (listaElemento.family === 'animal') ? blue : orange,
+      color : color
     }
   });
 
