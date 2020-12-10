@@ -5,25 +5,25 @@ $(document).ready(function () {
       name: "cat",
       family: "animal",
       icon: "fas fa-cat",
-      color: "blue",
+      color: "red",
     },
     {
       name: "dog",
       family: "animal",
       icon: "fas fa-dog",
-      color: "blue",
+      color: "red",
     },
     {
       name: "car",
       family: "vehicle",
       icon: "fas fa-car",
-      color: "blue",
+      color: "red",
     },
     {
       name: "tractor",
       family: "vehicle",
       icon: "fas fa-tractor",
-      color: "blue",
+      color: "red",
     },
   ];
 
@@ -34,23 +34,22 @@ $(document).ready(function () {
   const orange = "orange";
   const purple = "purple";
 
-  const nuovaLista = lista.map(cat => {
-    const name = lista.name;
-    const family = lista.family;
-    const icon = lista.icon;
-    const color = lista.color;
+  const nuovaLista = lista.map(listaElemento => {
+    const name = listaElemento.name;
+    const family = listaElemento.family;
+    const icon = listaElemento.icon;
+    const color = listaElemento.color;
 
     return {
-      ...lista,
+      ...listaElemento,
 
       ribbon : {
-        color: (lista.family === 'animal') ? blue : orange,
+        color: (listaElemento.family === 'animal') ? blue : orange,
       }
     }
   });
-
-
   console.log(nuovaLista);
+
   //inseriamo le icone colorate nel container
   const icons = document.getElementById('icons');
 
@@ -63,9 +62,7 @@ $(document).ready(function () {
     `;
     icons.insertAdjacentHTML('beforeend', markup);
   });
-
 });
-
 
 /* ---- FUNCTIONS ----*/
 //1. Funzione milestone 1
