@@ -30,8 +30,8 @@ $(document).ready(function () {
   lista.forEach(listaElemento => {
     const markup = `
     <div>
-      <i class="${lista.icon}"></i>
-      ${lista.name}
+      <i class="${lista.icon}" style="color:blue"></i>
+      <div class="title">${lista.name}</div>
     </div>
     `;
     icons.insertAdjacentHTML('beforeend', markup);
