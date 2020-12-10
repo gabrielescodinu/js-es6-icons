@@ -25,6 +25,12 @@ $(document).ready(function () {
       icon: "fas fa-tractor",
       color: "red",
     },
+    {
+      name: "flower",
+      family: "plant",
+      icon: "fas fa-tractor",
+      color: "red",
+    },
   ];
 
   // definiamo dei colori per le icone (blue, orange, purple)
@@ -40,15 +46,15 @@ $(document).ready(function () {
     const icon = listaElemento.icon;
     const color = listaElemento.color;
 
+    // if (listaElemento.family === "animal") {
+    //   return "blue";
+    // }
     return {
       ...listaElemento,
-
-      ribbon : {
-        color: (listaElemento.family === 'animal') ? blue : orange,
-      }
+      color :
+        (listaElemento.family === 'animal') ? blue : orange,
     }
   });
-  console.log(nuovaLista);
 
   //inseriamo le icone colorate nel container
   const icons = document.getElementById('icons');
