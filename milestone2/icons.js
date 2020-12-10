@@ -5,48 +5,60 @@ $(document).ready(function () {
       name: "cat",
       family: "animal",
       icon: "fas fa-cat",
+      color: "blue",
     },
     {
       name: "dog",
       family: "animal",
       icon: "fas fa-dog",
+      color: "blue",
     },
     {
       name: "car",
       family: "vehicle",
       icon: "fas fa-car",
+      color: "blue",
     },
     {
       name: "tractor",
       family: "vehicle",
       icon: "fas fa-tractor",
+      color: "blue",
     },
   ];
 
   // definiamo dei colori per le icone (blue, orange, purple)
-  const blue;
-  const orange;
-  const purple;
 
   //aggiungiamo dei colori usando una funzione
-  const nuovaLista = cats.map(cat => {
-    const blue = lista.colorBlue;
-    const orange = lista.colorOrange;
-    const purple = lista.colorPurple;
+  const blue = "blue";
+  const orange = "orange";
+  const purple = "purple";
+
+  const nuovaLista = lista.map(cat => {
+    const name = lista.name;
+    const family = lista.family;
+    const icon = lista.icon;
+    const color = lista.color;
 
     return {
-      name,
-      family,
-      icon,
+      ...lista,
+
+      ribbon : {
+        color: (lista.family === 'animal') ? blue : orange,
+      }
     }
   });
 
+
+  console.log(nuovaLista);
   //inseriamo le icone colorate nel container
+  const icons = document.getElementById('icons');
+
   nuovaLista.forEach(nuovaListaElemento => {
     const markup = `
     <div>
-    <i class="${lista.icon}" style="color:${nuovaLista.color}"></i>
-    ${nuovaLista.name}
+    <i class="${nuovaListaElemento.icon}" style="color:${nuovaListaElemento.color}"></i>
+    ${nuovaListaElemento.name}
     </div>
     `;
     icons.insertAdjacentHTML('beforeend', markup);
