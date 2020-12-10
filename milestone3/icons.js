@@ -50,19 +50,26 @@ $(document).ready(function () {
 
   //estrapoliamo i tipi di icone
 
+  //animali
+  listaAnimali = [];
+  listaVeicoli = [];
+  listaPiante = [];
+
+  lista.forEach(listaElemento => {
+    if (listaElemento.family === "animal") {
+      listaAnimali.push(listaElemento);
+    } else if (listaElemento.family === "vehicle") {
+      listaVeicoli.push(listaElemento);
+    } else if (listaElemento.family === "plant") {
+      listaPiante.push(listaElemento);
+    }
+  });
+
+  console.log(listaAnimali);
+  console.log(listaVeicoli);
+  console.log(listaPiante);
 
   //aggiungiamo i tipi alla select
-  // const iconsAnimal = document.getElementById('iconsAnimal');
-  //
-  // listaAnimali.forEach(listaAnimaliElemento => {
-  //   const markup = `
-  //   <div>
-  //   <i class="${listaAnimaliElemento.icon}" style="color:${listaAnimaliElemento.color}"></i>
-  //   ${listaAnimaliElemento.name}
-  //   </div>
-  //   `;
-  //   iconsAnimal.insertAdjacentHTML('beforeend', markup);
-  // });
 
   var opzioneAnimali = $(".animali");
 
@@ -70,11 +77,8 @@ $(document).ready(function () {
 
   })
 
-
   //al change mostriamo solo le icone filtrate
   //mostriamo come passare un parametro a change e contemporaneamente destrutturiamo
-
-
 
 /* ---- FUNCTIONS ----*/
 
