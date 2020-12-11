@@ -49,35 +49,44 @@ $(document).ready(function () {
   });
 
   //estrapoliamo i tipi di icone
-  listaAnimali = [];
-  listaVeicoli = [];
-  listaPiante = [];
 
-  lista.forEach(listaElemento => {
-    if (listaElemento.family === "animal") {
-      listaAnimali.push(listaElemento);
-    } else if (listaElemento.family === "vehicle") {
-      listaVeicoli.push(listaElemento);
-    } else if (listaElemento.family === "plant") {
-      listaPiante.push(listaElemento);
-    }
+  let tipi = lista.map((listaElemento)=>{
+    return listaElemento.family
   });
 
-  console.log(listaAnimali);
-  console.log(listaVeicoli);
-  console.log(listaPiante);
-
-  const filteredAnimal = lista.filter((listaElemento) => {
-    return listaElemento === "animal"
-  });
-
-  console.log(filteredAnimal);
+  //let tipiNoDuplicati = [];
+  let tipiNoDuplicati = tipi.filter((tipiElemento, i, array)=>{
+    console.log(array);
+    return array.indexOf(tipiElemento) == i;
+  })
+  console.log(tipiNoDuplicati);
 
   //aggiungiamo i tipi alla select
-  var opzioneAnimali = $(".animali");
+  const selectFamily = document.querySelector('select');
 
-  opzioneAnimali.change (function(){
+  tipiNoDuplicati.forEach(tipiNoDuplicatiElemento => {
+    const markup = `
+    <option class="${tipiNoDuplicatiElemento}">${tipiNoDuplicatiElemento}</option>
+    `;
+    selectFamily.insertAdjacentHTML('beforeend', markup);
   });
+
+  const selectAnimali = $("option.animal");
+
+  selectAnimali.click(function(){
+    $("#icons > div").hide();
+  })
+
+  // $("input").change(function(){
+  //   alert("The text has been changed.");
+  // });
+
+  // let filteredAnimal = lista.filter((listaElemento) => {
+  //   return listaElemento.family === "animal"
+  // });
+  //
+  // console.log(filteredAnimal);
+
 
   //al change mostriamo solo le icone filtrate
   //mostriamo come passare un parametro a change e contemporaneamente destrutturiamo
