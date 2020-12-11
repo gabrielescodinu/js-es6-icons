@@ -41,8 +41,6 @@ $(document).ready(function () {
   const purple = "purple";
 
   const nuovaLista = lista.map(listaElemento => {
-    let color;
-
     if (listaElemento.family === "animal") {
       color = blue;
     } else if (listaElemento.family === "vehicle") {
@@ -57,7 +55,7 @@ $(document).ready(function () {
   });
 
   //inseriamo le icone colorate nel container
-  const icons = document.getElementById('icons');
+  const icons = document.querySelector('#icons');
 
   nuovaLista.forEach(nuovaListaElemento => {
     const markup = `

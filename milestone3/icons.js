@@ -36,7 +36,7 @@ $(document).ready(function () {
   // colori come da milestone 2
   //aggiungiamo dei colori come da milestone 2
   //inseriamo le icone nel container come da milefunctstone 2
-  const icons = document.getElementById('icons');
+  const icons = document.querySelector('#icons');
 
   lista.forEach(listaElemento => {
     const markup = `
@@ -49,8 +49,6 @@ $(document).ready(function () {
   });
 
   //estrapoliamo i tipi di icone
-
-  //animali
   listaAnimali = [];
   listaVeicoli = [];
   listaPiante = [];
@@ -69,13 +67,17 @@ $(document).ready(function () {
   console.log(listaVeicoli);
   console.log(listaPiante);
 
-  //aggiungiamo i tipi alla select
+  const filteredAnimal = lista.filter((listaElemento) => {
+    return listaElemento === "animal"
+  });
 
+  console.log(filteredAnimal);
+
+  //aggiungiamo i tipi alla select
   var opzioneAnimali = $(".animali");
 
   opzioneAnimali.change (function(){
-
-  })
+  });
 
   //al change mostriamo solo le icone filtrate
   //mostriamo come passare un parametro a change e contemporaneamente destrutturiamo

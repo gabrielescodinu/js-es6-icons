@@ -24,7 +24,10 @@ $(document).ready(function () {
   ];
 
   // Selezioniamo il container icons
-  const icons = document.getElementById('icons');
+  // il querySelector funziona come il getElementbyId, all'interno specificare
+  // se è una classe con il punto, un id con l'#, ecc.
+  // ricorda che il querySelector prende solo il primo elemento con quella classe o Id ecc.
+  const icons = document.querySelector('#icons');
 
   //inseriamo le icone nel container (possiamo creare una funzione tipo print() per inserire gli elementi e richiamarla qui)
   lista.forEach(listaElemento => {
