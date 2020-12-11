@@ -36,17 +36,14 @@ $(document).ready(function () {
   // definiamo dei colori per le icone (blue, orange, purple)
 
   //aggiungiamo dei colori usando una funzione
-  const blue = "blue";
-  const orange = "orange";
-  const purple = "purple";
 
   const nuovaLista = lista.map(listaElemento => {
     if (listaElemento.family === "animal") {
-      color = blue;
+      var color = "blue";
     } else if (listaElemento.family === "vehicle") {
-      color = orange;
+      var color = "orange";
     } else {
-      color = purple
+      var color = "purple";
     }
     return {
       ...listaElemento,

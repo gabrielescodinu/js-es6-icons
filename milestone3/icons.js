@@ -77,19 +77,13 @@ $(document).ready(function () {
     $("#icons > div").hide();
   })
 
-  // $("input").change(function(){
-  //   alert("The text has been changed.");
-  // });
-
-  // let filteredAnimal = lista.filter((listaElemento) => {
-  //   return listaElemento.family === "animal"
-  // });
-  //
-  // console.log(filteredAnimal);
-
-
   //al change mostriamo solo le icone filtrate
   //mostriamo come passare un parametro a change e contemporaneamente destrutturiamo
+  let filteredAnimal = lista.filter((listaElemento) => {
+    return listaElemento.family === "animal"
+  });
+
+  console.log(filteredAnimal);
 
 /* ---- FUNCTIONS ----*/
 
